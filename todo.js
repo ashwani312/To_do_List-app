@@ -7,7 +7,21 @@ console.log('Working');
 
 function renderList () {}
 
-function markTaskAsComplete (taskId) {}
+
+// isme thoda doubt hai
+function toggleTak (taskId) {
+    const task = task.filter(function (task){
+        return task.id === taskId;
+    })
+    if(task.length > 0){
+        const currentTaks = task[0];
+
+        currentTaks.done = !currentTaks.done;
+        renderList();
+        showNotification('Task togggle successfully')
+        return
+    }
+}
 
 function deleteTask (taskId) {
     const newTasks = tasks.filter(function (task){
