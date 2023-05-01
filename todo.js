@@ -4,8 +4,27 @@ const addTaskInput = document.getElementById('add');
 const tasksCounter = document.getElementById('tasks-counter');
 
 console.log('Working');
+function addTaskToDom(task){
+    const li = document.createElement('li');
 
-function renderList () {}
+    li.innerHTML = `
+  
+          <input type="checkbox" id=${task.id} data-id="12" ${task.done? 'checked' : ''}  class="custom-checkbox">
+          <label for=${task.id}>${task.text}</label>
+          <img src="delete.png" class="delete" alt='delete' data-id=${task.id} />
+   
+    `
+
+    taskList.append(li)
+}
+
+
+function renderList () {
+    taskList.innerHTML = '';
+    for(let i=0; i<tasks.length; i++){
+        addTaskToDom(tasks[i])
+    }
+}
 
 
 // isme thoda doubt hai
